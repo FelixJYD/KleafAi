@@ -224,134 +224,148 @@ export default function App() {
 
 // Definición de estilos para la aplicación
 const styles = StyleSheet.create({
-  // Contenedor principal
+  // Contenedor principal con temática de naturaleza
   container: {
     flex: 1,
-    alignItems: "center", // Alineación centrada horizontal
-    justifyContent: "center", // Alineación centrada vertical
-    backgroundColor: "#A8D5BA", // Verde suave, inspirado en la naturaleza
-    padding: 20, // Espacio adicional alrededor del contenido
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#edf4e8", // Fondo verde claro inspirado en plantas
+    padding: 20,
   },
 
-  // Estilo de la cámara
+  // Estilo de la cámara con borde temático
   camera: {
-    height: 400, // Altura de la cámara
-    width: "100%", // Ancho completo
-    borderRadius: 20, // Bordes redondeados
-    overflow: "hidden", // Para asegurar que el contenido se recorte si se sale del borde
-    borderColor: "#4caf50", // Color de borde verde para destacar la cámara
-    borderWidth: 4, // Grosor del borde
+    height: 400,
+    width: "100%",
+    borderRadius: 20,
+    overflow: "hidden",
+    borderColor: "#81c784", // Verde natural para resaltar
+    borderWidth: 4,
+    backgroundColor: "#ffffff", // Fondo blanco como placeholder para la cámara
   },
 
   // Contenedor de botones
   buttonContainer: {
-    height: 150, // Altura del contenedor
-    width: "90%", // Ancho del contenedor
-    flexDirection: "column", // Dirección de los botones (vertical)
-    justifyContent: "space-between", // Espaciado entre los botones
-    marginTop: 20, // Espacio superior
+    height: 150,
+    width: "90%",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    marginTop: 20,
+    backgroundColor: "#ffffff", // Fondo blanco para destacar los botones
+    borderRadius: 15, // Bordes suaves
+    padding: 10,
+    shadowColor: "#000", // Sombra para dar profundidad
+    shadowOpacity: 0.1,
+    shadowRadius: 5,
+    elevation: 3, // Sombra en Android
   },
 
-  // Contenedor de botones principales
+  // Contenedor de botones principales (Cambiar cámara, Capturar)
   mainButtons: {
-    flexDirection: "row", // Disposición horizontal de los botones
-    justifyContent: "space-around", // Espaciado equitativo entre los botones
+    flexDirection: "row",
+    justifyContent: "space-around",
   },
 
   // Contenedor del indicador de carga
   indicatorContainer: {
-    padding: 20, // Espaciado alrededor del indicador
-    position: "absolute", // Posición absoluta para que se superponga a la UI
-    justifyContent: "center", // Centrado del contenido
-    alignItems: "center", // Centrado de los íconos/texto
-    backgroundColor: "rgba(0, 0, 0, 0.5)", // Fondo translúcido negro
-    borderRadius: 20, // Bordes redondeados
-    marginTop: 200, // Margen superior para colocarlo en el centro de la pantalla
+    padding: 20,
+    position: "absolute",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)", // Fondo translúcido oscuro
+    borderRadius: 20,
+    marginTop: 200,
   },
 
-  // Estilo del texto en el indicador de carga
+  // Texto en el indicador de carga
   indicatorText: {
-    color: "#ffffff", // Texto blanco
-    fontSize: 18, // Tamaño del texto
-    marginTop: 15, // Espacio superior entre el indicador y el texto
+    color: "#ffffff",
+    fontSize: 18,
+    marginTop: 15,
   },
 
-  // Estilos para el modal de respuesta de la IA
+  // Estilo del modal de respuesta de la IA
   apiResponseModal: {
-    position: "absolute", // Posición absoluta para que se superponga a la UI
-    zIndex: 4, // Prioridad de apilamiento
-    height: "90%", // Altura del modal (90% de la pantalla)
-    width: "95%", // Ancho del modal (95% de la pantalla)
-    padding: 20, // Espaciado interior
-    backgroundColor: "rgba(0, 0, 0, 0.8)", // Fondo translúcido para el modal
-    justifyContent: "center", // Alineación centrada del contenido dentro del modal
-    borderRadius: 20, // Bordes redondeados
+    position: "absolute",
+    zIndex: 4,
+    height: "90%",
+    width: "95%",
+    padding: 20,
+    backgroundColor: "rgba(0, 0, 0, 0.8)", // Fondo translúcido oscuro
+    justifyContent: "center",
+    borderRadius: 20,
   },
 
-  // Estilo del contenedor de la respuesta de la IA
+  // Contenedor del texto de respuesta
   apiResponseContainer: {
-    backgroundColor: "#2d2d3f", // Fondo oscuro para la respuesta
-    borderRadius: 15, // Bordes redondeados
-    borderColor: "#4caf50", // Borde verde
-    borderWidth: 2, // Grosor del borde
-    padding: 15, // Espaciado interior
+    backgroundColor: "#dcedc8", // Verde claro para texto
+    borderRadius: 15,
+    borderColor: "#81c784", // Verde vivo para el borde
+    borderWidth: 2,
+    padding: 15,
   },
 
-  // Estilo del texto de la respuesta
+  // Texto de respuesta
   responseText: {
-    color: "#e0e0e0", // Color gris claro para el texto
-    fontSize: 18, // Tamaño del texto
+    color: "#2e7d32", // Verde oscuro para mejor contraste
+    fontSize: 18,
   },
 
-  // Estilo de la superposición del modal introductorio
+  // Superposición del modal introductorio
   modalOverlay: {
-    flex: 1, // Toma toda la pantalla
-    justifyContent: "center", // Centrado vertical
-    alignItems: "center", // Centrado horizontal
-    backgroundColor: "rgba(0, 0, 0, 0.5)", // Fondo translúcido
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)", // Fondo translúcido oscuro
   },
 
-  // Estilo del modal introductorio
+  // Modal introductorio
   introModal: {
-    width: "80%", // Ancho del modal
-    backgroundColor: "#2d2d3f", // Fondo oscuro
-    borderRadius: 15, // Bordes redondeados
-    padding: 20, // Espaciado interior
-    borderColor: "#4caf50", // Borde verde
-    borderWidth: 2, // Grosor del borde
+    width: "80%",
+    backgroundColor: "#ffffff", // Fondo blanco para mejor legibilidad
+    borderRadius: 15,
+    padding: 20,
+    borderColor: "#81c784", // Verde vivo
+    borderWidth: 2,
   },
 
-  // Estilo del texto introductorio
+  // Texto introductorio
   introText: {
-    color: "#e0e0e0", // Color gris claro para el texto
-    fontSize: 16, // Tamaño del texto
-    marginBottom: 15, // Espacio inferior
-    textAlign: "center", // Alineación centrada
+    color: "#388e3c", // Verde oscuro
+    fontSize: 16,
+    marginBottom: 15,
+    textAlign: "center",
   },
 
-  // Contenedor para la solicitud de permisos
+  // Contenedor de permisos
   permissionContainer: {
-    flex: 1, // Toma toda la pantalla
-    justifyContent: "center", // Centrado vertical
-    alignItems: "center", // Centrado horizontal
-    backgroundColor: "#2d2d3f", // Fondo oscuro similar al de la app
-    padding: 20, // Espaciado interior
-    borderRadius: 10, // Bordes redondeados opcionales
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f1f8e9", // Fondo verde pálido
+    padding: 20,
+    borderRadius: 10,
   },
 
-  // Estilo del texto de permisos
-  permissionText: {
-    textAlign: "center", // Alineación centrada
-    fontSize: 18, // Tamaño del texto
-    color: "#ffffff", // Texto blanco para destacarse sobre fondo oscuro
-    marginBottom: 15, // Espacio inferior
-  },
-
-  // Estilo del botón de permisos
+  // Texto de permisos
   permissionButton: {
-    backgroundColor: "#4caf50", // Botón verde para resaltar
-    padding: 10, // Espaciado interno
-    borderRadius: 5, // Bordes redondeados
-    marginTop: 10, // Espacio superior
-  },
+    backgroundColor: "#388e3c", // Verde oscuro para mayor contraste
+    padding: 10,
+    borderRadius: 5,
+    marginTop: 10,
+    borderWidth: 1,
+    borderColor: "#ffffff", // Borde blanco que resalte
+    shadowColor: "#000", // Sombras para darle profundidad
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5, // Para dispositivos Android
+},
+permissionText: {
+    textAlign: "center",
+    fontSize: 16,
+    color: "#ffffff", // Texto blanco para resaltar
+    fontWeight: "bold",
+},
+
 });

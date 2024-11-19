@@ -7,8 +7,8 @@
     "icon": "./assets/Kcorp.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
+      "image": "./assets/leaf.png",
+      "resizeMode": "cover", 
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
